@@ -5,6 +5,11 @@ const selectEl = document.getElementById("drop-down")
 const playerImage = document.getElementById("player-img")
 const playerText = document.getElementById("player-text")
 const message = document.getElementById("message")
+const playerScoreEl = document.getElementById("player-score")
+const computerScoreEl = document.getElementById("computer-score")
+
+let playerScore = 0
+let computerScore = 0
 
 let hands = ["rock", "paper", "scissor"]
 let playerChoice
@@ -53,14 +58,21 @@ function showComputerImage(){
 }
 
 function playGame(){
-    if(showComputerImage() == "rock" && playerChoice == "paper" || showComputerImage() == "scissor" && playerChoice == "rock" || showComputerImage() == "paper" && playerChoice == "scissor")
+    if(showComputerImage() == "rock" && playerChoice == "paper" || showComputerImage() == "scissor" && playerChoice == "rock" || showComputerImage() == "paper" && playerChoice == "scissor"){
         message.textContent = "Hurray You Won"
+        playerScore++
+        playerScoreEl.textContent = `Player: ${playerScore}`
+    }
+        
 
     else if(showComputerImage() == playerChoice)
         message.textContent = "Game Tie"
 
-    else
+    else{
         message.textContent = "Computer wins"
+        computerScore++
+        computerScoreEl.textContent = `Computer: ${computerScore}`
+    }
 }
 
 start.addEventListener("click",playGame)

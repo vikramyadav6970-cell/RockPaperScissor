@@ -1,6 +1,29 @@
+html{
+    height: 100%;
+}
+
 body{
     background-color: rgb(230, 230, 230);
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+}
+
+#main-game{
+    display: flex;
+}
+
+#box{
+    width: 80%;
+}
+
+#scorecard{
+    width: 20%;
+    height: 40%;
+    border: 2px solid black;
+    border-radius: 20px;
+}
+
+#scorecard h2{
+    margin-left: 15px;
 }
 
 
@@ -55,21 +78,21 @@ h1{
 
 img{
     margin-top: 50px;
-    height: 300px;
-    width: 500px;
+    height: 200px;
+    width: 350px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     margin-left: 20px;
 }
 
 #player-text{
-    font-size: 60px;
+    font-size: 40px;
     color: rgb(82, 119, 255);
 }
 
 #text{
-    margin-left: 400px;
-    font-size: 60px;
+    margin-left: 250px;
+    font-size: 40px;
     color: rgb(82, 119, 255);
 }
 

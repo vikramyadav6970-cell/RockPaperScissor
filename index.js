@@ -10,11 +10,13 @@ const computerScoreEl = document.getElementById("computer-score")
 
 let playerScore = 0
 let computerScore = 0
+let isAlive = false
 
 let hands = ["rock", "paper", "scissor"]
 let playerChoice
 
 function Player(){
+    isAlive = true
     message.textContent = "Let's Play"
     image.src=""
 
@@ -58,7 +60,8 @@ function showComputerImage(){
 }
 
 function playGame(){
-    if(showComputerImage() == "rock" && playerChoice == "paper" || showComputerImage() == "scissor" && playerChoice == "rock" || showComputerImage() == "paper" && playerChoice == "scissor"){
+    if(isAlive === true){
+        if(playerChoice == "paper" && showComputerImage() == "rock" || playerChoice == "rock" && showComputerImage() == "scissor" || playerChoice == "scissor" && showComputerImage() == "paper" ){
         message.textContent = "Hurray You Won"
         playerScore++
         playerScoreEl.textContent = `Player: ${playerScore}`
@@ -72,6 +75,8 @@ function playGame(){
         message.textContent = "Computer wins"
         computerScore++
         computerScoreEl.textContent = `Computer: ${computerScore}`
+    }
+    isAlive = false
     }
 }
 

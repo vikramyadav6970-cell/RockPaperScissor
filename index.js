@@ -61,21 +61,28 @@ function showComputerImage(){
 
 function playGame(){
     if(isAlive === true){
-        if(playerChoice == "paper" && showComputerImage() == "rock" || playerChoice == "rock" && showComputerImage() == "scissor" || playerChoice == "scissor" && showComputerImage() == "paper" ){
+    let computerChoice = showComputerImage()
+    if(playerChoice == "choose"){
+        alert("Please make a choice")
+    }
+
+    else if(playerChoice == "paper" && computerChoice == "rock" || playerChoice == "rock" && computerChoice == "scissor" || playerChoice == "scissor" && computerChoice == "paper" ){
         message.textContent = "Hurray You Won"
         playerScore++
         playerScoreEl.textContent = `Player: ${playerScore}`
     }
         
 
-    else if(showComputerImage() == playerChoice)
+    else if(computerChoice == playerChoice){
         message.textContent = "Game Tie"
+    }
 
     else{
         message.textContent = "Computer wins"
         computerScore++
         computerScoreEl.textContent = `Computer: ${computerScore}`
     }
+    selectEl.selectedIndex = 0
     isAlive = false
     }
 }
